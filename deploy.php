@@ -1,15 +1,12 @@
 <?php
-    /*
-    require(__DIR__ . "/vendor/autoload.php");
-    use GitHubWebhook\Handler;
+    /**
+     * GIT DEPLOYMENT SCRIPT
+     *
+     * Used for automatically deploying websites via GitHub
+     *
+     */
 
-    $handler = new Handler("", __DIR__);
-    if($handler->handle()) {
-    } else {
-        $output = "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">Wrong secret\n</span><br />";
-    }
-    */
-
+    // array of commands
     $commands = array(
         'echo $PWD',
         'whoami',
@@ -19,8 +16,9 @@
         'git submodule sync',
         'git submodule update',
         'git submodule status',
-        'composer install',
-    ); 
+    );
+
+    // exec commands
     $output = '';
     foreach($commands AS $command){
         $tmp = shell_exec($command);
@@ -28,9 +26,7 @@
         $output .= "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">{$command}\n</span><br />";
         $output .= htmlentities(trim($tmp)) . "\n<br /><br />";
     }
-
 ?>
-
 
 <!DOCTYPE HTML>
 <html lang="en-US">
