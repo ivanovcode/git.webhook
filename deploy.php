@@ -1,7 +1,7 @@
 <?php
     require(__DIR__ . "/vendor/autoload.php");
     use GitHubWebhook\Handler;
-    $handler = new Handler("6e116b1f874b67b43b6ab8d7987c1f1c", __DIR__);
+    $handler = new Handler("ivan0vv0va", __DIR__);
     if($handler->handle()) {
         $commands = array(
             'echo $PWD',
