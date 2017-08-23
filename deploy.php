@@ -1,9 +1,8 @@
 <?php
     require(__DIR__ . "/vendor/autoload.php");
     use GitHubWebhook\Handler;
-    $handler = new Handler("ivan0vv0va11", __DIR__);
-    print_r($handler->getSecret());
-    if($handler->handle()) {
+    $handler = new Handler("6e116b1f874b67b43b6ab8d7987c1f1c", __DIR__);    
+    if($handler->validate()) {
         $commands = array(
             'echo $PWD',
             'whoami',
