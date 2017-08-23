@@ -1,1 +1,3 @@
 /cdn
+/vendor
+composer.lock
