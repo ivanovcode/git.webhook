@@ -1,7 +1,7 @@
 <?php
     require(__DIR__ . "/vendor/autoload.php");
     use GitHubWebhook\Handler;
-    $handler = new Handler("<your secret>", __DIR__);
+    $handler = new Handler("6e116b1f874b67b43b6ab8d7987c1f1c", __DIR__);
     if($handler->handle()) {
         $commands = array(
             'echo $PWD',
@@ -12,6 +12,7 @@
             'git submodule sync',
             'git submodule update',
             'git submodule status',
+            'composer install',
         );
 
         // exec commands
@@ -23,7 +24,27 @@
             $output .= htmlentities(trim($tmp)) . "\n<br /><br />";
         }
     } else {
-        $output = "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">Wrong secret\n</span><br />";
+        //$output = "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">Wrong secret\n</span><br />";
+        $commands = array(
+            'echo $PWD',
+            'whoami',
+            'git fetch --all',
+            'git checkout --force "origin/master"',
+            'git status',
+            'git submodule sync',
+            'git submodule update',
+            'git submodule status',
+            'composer install',
+        );
+
+        // exec commands
+        $output = '';
+        foreach($commands AS $command){
+            $tmp = shell_exec($command);
+            
+            $output .= "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">{$command}\n</span><br />";
+            $output .= htmlentities(trim($tmp)) . "\n<br /><br />";
+        }
     }
 
 ?>
