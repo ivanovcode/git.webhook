@@ -1,12 +1,14 @@
 <?php
+    /*
     require(__DIR__ . "/vendor/autoload.php");
     use GitHubWebhook\Handler;
 
     $handler = new Handler("", __DIR__);
     if($handler->handle()) {
     } else {
-        //$output = "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">Wrong secret\n</span><br />";
+        $output = "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">Wrong secret\n</span><br />";
     }
+    */
 
     $commands = array(
         'echo $PWD',
