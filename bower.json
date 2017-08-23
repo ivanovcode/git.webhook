@@ -1,0 +1,21 @@
+{
+  "name": "OCR",
+  "homepage": "https://github.com/ivanovsite/OCR",
+  "authors": [
+    "ivanovsite <development@ivanov.site>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ocrad.js": "https://github.com/antimatter15/ocrad.js.git",
+    "tesseract.js": "https://github.com/naptha/tesseract.js.git#^1.0.10"
+  }
+}
