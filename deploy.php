@@ -24,27 +24,7 @@
             $output .= htmlentities(trim($tmp)) . "\n<br /><br />";
         }
     } else {
-        //$output = "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">Wrong secret\n</span><br />";
-        $commands = array(
-            'echo $PWD',
-            'whoami',
-            'git fetch --all',
-            'git checkout --force "origin/master"',
-            'git status',
-            'git submodule sync',
-            'git submodule update',
-            'git submodule status',
-            'composer install',
-        );
-
-        // exec commands
-        $output = '';
-        foreach($commands AS $command){
-            $tmp = shell_exec($command);
-            
-            $output .= "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">{$command}\n</span><br />";
-            $output .= htmlentities(trim($tmp)) . "\n<br /><br />";
-        }
+        $output = "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">Wrong secret\n</span><br />";
     }
 
 ?>
